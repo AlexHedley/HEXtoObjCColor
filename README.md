@@ -1,6 +1,8 @@
 # HEXtoUIColor
 HEX to UIColor Extensions
 
+My [Website](http://alexhedley.com/ios/hextorgb/) page.
+
 **PopClip**
 
 This extension takes a HEX Color and converts it to a UIColor for use within an iOS App.
@@ -21,6 +23,6 @@ Here is a Alfred Workflow achieving the same,
 Demo:
 ![HEX to UIColor](/HEXtoUIColor (Alfred).gif "Preview of Alfred Workflow")
 
-[Alfred App](http://www.alfredapp.com)
+[Alfred App](http://www.alfredapp.com) Website
 
-[Alfred Workflows](http://support.alfredapp.com/workflows)
+[Alfred Workflows](http://support.alfredapp.com/workflows) page
