@@ -3,6 +3,8 @@ HEX to UIColor Extensions
 
 My [Website](http://alexhedley.com/ios/hextorgb/) page.
 
+======
+
 **PopClip**
 
 This extension takes a HEX Color and converts it to a UIColor for use within an iOS App.
