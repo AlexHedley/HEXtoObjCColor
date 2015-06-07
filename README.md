@@ -1,4 +1,4 @@
-# HEXtoUIColor
+# HEX to UIColor
 HEX to UIColor Extensions
 
 My [Website](http://alexhedley.com/ios/hextorgb/) page.
