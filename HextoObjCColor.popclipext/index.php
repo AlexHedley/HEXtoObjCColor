@@ -1,5 +1,10 @@
 <?php
 	$hexvalue = trim(getenv('POPCLIP_TEXT'));
+	
+	$methodChoice=getenv('POPCLIP_OPTION_METHOD');
+	
+	$conversionChoice=getenv('POPCLIP_OPTION_CONVERSION');
+	
 	//$hexvalue = "#26264C";
 	$rgb = hex2rgb($hexvalue);
 	//print_r($rgb);
@@ -9,21 +14,28 @@
 	$r = $rgb[0];
 	$g = $rgb[1];
 	$b = $rgb[2];
-
-	$rd = round($r/255, 3);
-	$gd = round($g/255, 3);
-	$bd = round($b/255, 3);
+	
+	if ($conversionChoice == 1) {
+		$rd = round($r/255, 3);
+		$gd = round($g/255, 3);
+		$bd = round($b/255, 3);
+		
+		echo "[".$methodChoice." colorWithRed:".$rd." green:".$gd." blue:".$bd." alpha:1] /*".$hexvalue."*/";
+	}
+	if ($conversionChoice == 0) {
+		echo "[".$methodChoice." colorWithRed:".$r."/255 green:".$g."/255 blue:".$b."/255 alpha:1] /*".$hexvalue."*/";
+	}
 	
 	//"[UIColor colorWithRed:"0.149" green:"0.149" blue:"0.298" alpha:1] /*#26264C*/"
 	//echo "[UIColor colorWithRed:".$rgb[0]." green:".$rgb[1]." blue:".$rgb[0]." alpha:1] /*".$hexvalue."*/";
 	//echo "[UIColor colorWithRed:".$r."/255 green:".$g."/255 blue:".$b."/255 alpha:1] /*".$hexvalue."*/";
-	echo "[UIColor colorWithRed:".$rd." green:".$gd." blue:".$bd." alpha:1] /*".$hexvalue."*/";
+	//echo "[UIColor colorWithRed:".$rd." green:".$gd." blue:".$bd." alpha:1] /*".$hexvalue."*/";
+	//echo "[".$methodChoice." colorWithRed:".$rd." green:".$gd." blue:".$bd." alpha:1] /*".$hexvalue."*/";
 	
-	$rgb = array( 255, 255, 255 );
-	$hex = rgb2hex($rgb);
+	//$rgb = array( 255, 255, 255 );
+	//$hex = rgb2hex($rgb);
 	//echo $hex;
-
-
+	
 //http://bavotasan.com/2011/convert-hex-color-to-rgb-using-php/
 function hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
