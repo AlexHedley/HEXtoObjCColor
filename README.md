@@ -1,5 +1,5 @@
-# HEX to UIColor
-HEX to UIColor Extensions
+# HEX to ObjC Color
+HEX to ObjC Color Extensions
 
 My [Website](http://alexhedley.com/ios/hextorgb/) page.
 
@@ -7,7 +7,7 @@ My [Website](http://alexhedley.com/ios/hextorgb/) page.
 
 **PopClip**
 
-This extension takes a HEX Color and converts it to a UIColor for use within an iOS App.
+This extension takes a HEX Color and converts it to a UIColor/NSColor/SKColor for use within an iOS/Mac OS X App.
 
 Here is a demo:
 ![HEX to UIColor](/HEXtoUIColor.gif "Preview of PopClip Extension")
