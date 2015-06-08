@@ -12,6 +12,16 @@ This extension takes a HEX Color and converts it to a UIColor/NSColor/SKColor fo
 Here is a demo:
 ![HEX to UIColor](/HEXtoUIColor.gif "Preview of PopClip Extension")
 
+![Options](/Options.png "Options")
+![Methods](/Methods.png "Methods")
+
+    [UIColor colorWithRed:0.149 green:0.149 blue:0.298 alpha:1] /*#26264C*/
+    [SKColor colorWithRed:0.149 green:0.149 blue:0.298 alpha:1] /*#26264C*/
+
+Change the Options, turn off 'Decimal' and swap to 'NSColor'
+
+    [NSColor colorWithRed:38/255 green:38/255 blue:76/255 alpha:1] /*#26264C*/
+
 [PopClip Extensions](https://pilotmoon.com/popclip/extensions/) website.
 
 [PopClip Extensions](https://github.com/pilotmoon/PopClip-Extensions) on GitHub.
