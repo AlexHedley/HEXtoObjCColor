@@ -33,7 +33,7 @@ Change the Options, turn off 'Decimal' and swap to 'NSColor'
 Here is a Alfred Workflow achieving the same,
 
 Demo:
-![HEX to UIColor](/HEXtoUIColor (Alfred).gif "Preview of Alfred Workflow")
+![HEX to UIColor](/HEXtoUIColor%20(Alfred).gif "Preview of Alfred Workflow")
 
 [Alfred App](http://www.alfredapp.com) Website
 
