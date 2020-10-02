@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alexhedley.hextouicolor</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3B5132D-EFD5-446C-9DAD-2743A3E39428</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Alex Hedley</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>HEX to UIColor</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A3B5132D-EFD5-446C-9DAD-2743A3E39428</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>hextouicolor</string>
+				<key>text</key>
+				<string>HEX to UIColor</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+//$query = "{query}";
+//$clean = trim("{query}");
+$hexvalue = trim("{query}");
+
+	//$hexvalue = trim(getenv('POPCLIP_TEXT'));
+	//$hexvalue = "#26264C";
+	$rgb = hex2rgb($hexvalue);
+	//print_r($rgb);
+	//echo implode(",", $rgb);
+	//echo $rgb[0];
+
+	$r = $rgb[0];
+	$g = $rgb[1];
+	$b = $rgb[2];
+
+	$rd = round($r/255, 3);
+	$gd = round($g/255, 3);
+	$bd = round($b/255, 3);
+	
+	//"[UIColor colorWithRed:"0.149" green:"0.149" blue:"0.298" alpha:1] /*#26264C*/"
+	//echo "[UIColor colorWithRed:".$rgb[0]." green:".$rgb[1]." blue:".$rgb[0]." alpha:1] /*".$hexvalue."*/";
+	//echo "[UIColor colorWithRed:".$r."/255 green:".$g."/255 blue:".$b."/255 alpha:1] /*".$hexvalue."*/";
+	echo "[UIColor colorWithRed:".$rd." green:".$gd." blue:".$bd." alpha:1] /*".$hexvalue."*/";
+	
+	$rgb = array( 255, 255, 255 );
+	$hex = rgb2hex($rgb);
+	//echo $hex;
+
+
+//http://bavotasan.com/2011/convert-hex-color-to-rgb-using-php/
+function hex2rgb($hex) {
+   $hex = str_replace("#", "", $hex);
+
+   if(strlen($hex) == 3) {
+      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+   } else {
+      $r = hexdec(substr($hex,0,2));
+      $g = hexdec(substr($hex,2,2));
+      $b = hexdec(substr($hex,4,2));
+   }
+   $rgb = array($r, $g, $b);
+   //return implode(",", $rgb); // returns the rgb values separated by commas
+   return $rgb; // returns an array with the rgb values
+}
+
+function rgb2hex($rgb) {
+   $hex = "#";
+   $hex .= str_pad(dechex($rgb[0]), 2, "0", STR_PAD_LEFT);
+   $hex .= str_pad(dechex($rgb[1]), 2, "0", STR_PAD_LEFT);
+   $hex .= str_pad(dechex($rgb[2]), 2, "0", STR_PAD_LEFT);
+
+   return $hex; // returns the hex value including the number sign (#)
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>A3B5132D-EFD5-446C-9DAD-2743A3E39428</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.alexhedley.com/</string>
+</dict>
+</plist>
